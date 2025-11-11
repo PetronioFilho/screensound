@@ -1,28 +1,17 @@
-﻿Banda banda = new Banda("Legião Urbana");
+﻿Episodio ep1 = new Episodio(1, "Introdução ao Screen Sound", 45);
+ep1.AdicionarConvidados("Alice");
+ep1.AdicionarConvidados("Bob");
+Console.WriteLine($"Resumo do Episódio: {ep1.Resumo}");
 
-Album album1 = new Album("As Quatro Estações");
+Episodio ep2 = new Episodio(2, "Entrevista com Desenvolvedores", 60);
+ep2.AdicionarConvidados("Charlie");
+ep2.AdicionarConvidados("Diana");
+Console.WriteLine($"Resumo do Episódio: {ep2.Resumo}");
 
-Musica musica1 = new Musica(banda, "Há Tempos")
-{
-    Duracao = 225,
-    Disponivel = true
-};
-
-Musica musica2 = new Musica(banda, "Pais e Filho")
-{
-    Duracao = 294,
-    Disponivel = false
-};
-
-album1.AdicionarMusica(musica1);
-album1.AdicionarMusica(musica2);
-banda.AdicionarAlbum(album1);
-
-musica1.ExibirFichaTecnica();
-musica2.ExibirFichaTecnica();
-
-album1.ExibirMusicasDoAlbum();
-banda.ExibirDiscografia();
+Podcast podcast = new Podcast("Screen Sound", "Eve");
+podcast.AdicionarEpisodio(ep1);
+podcast.AdicionarEpisodio(ep2);
+podcast.ExibirDetalhes();
 
 
 Console.ReadKey();
